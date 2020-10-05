@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Codedge\Updater;
+namespace NiNaCoder\Updater;
 
-use Codedge\Updater\Contracts\SourceRepositoryTypeContract;
-use Codedge\Updater\Contracts\UpdaterContract;
-use Codedge\Updater\Models\UpdateExecutor;
-use Codedge\Updater\SourceRepositoryTypes\GithubRepositoryType;
-use Codedge\Updater\SourceRepositoryTypes\HttpRepositoryType;
+use NiNaCoder\Updater\Contracts\SourceRepositoryTypeContract;
+use NiNaCoder\Updater\Contracts\UpdaterContract;
+use NiNaCoder\Updater\Models\UpdateExecutor;
+use NiNaCoder\Updater\SourceRepositoryTypes\GithubRepositoryType;
+use NiNaCoder\Updater\SourceRepositoryTypes\HttpRepositoryType;
 use Exception;
 use Illuminate\Foundation\Application;
 use InvalidArgumentException;
@@ -16,7 +16,7 @@ use InvalidArgumentException;
 /**
  * UpdaterManager.
  *
- * @author Holger Lösken <holger.loesken@codedge.de>
+ * @author Holger Lösken <holger.loesken@ninacoder-info.de>
  * @copyright See LICENSE file that was distributed with this source code.
  */
 final class UpdaterManager implements UpdaterContract

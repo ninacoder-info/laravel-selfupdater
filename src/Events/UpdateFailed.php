@@ -1,8 +1,8 @@
 <?php
 
-namespace Codedge\Updater\Events;
+namespace NiNaCoder\Updater\Events;
 
-use Codedge\Updater\Models\Release;
+use NiNaCoder\Updater\Models\Release;
 
 class UpdateFailed
 {

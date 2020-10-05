@@ -1,13 +1,13 @@
 <?php
 
-namespace Codedge\Updater;
+namespace NiNaCoder\Updater;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
  * UpdaterFacade.php.
  *
- * @author Holger Lösken <holger.loesken@codedge.de>
+ * @author Holger Lösken <holger.loesken@ninacoder-info.de>
  * @copyright See LICENSE file that was distributed with this source code.
  */
 class UpdaterFacade extends Facade

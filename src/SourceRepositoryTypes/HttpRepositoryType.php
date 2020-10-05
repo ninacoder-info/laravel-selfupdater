@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Codedge\Updater\SourceRepositoryTypes;
+namespace NiNaCoder\Updater\SourceRepositoryTypes;
 
-use Codedge\Updater\Contracts\SourceRepositoryTypeContract;
-use Codedge\Updater\Events\UpdateAvailable;
-use Codedge\Updater\Models\Release;
-use Codedge\Updater\Models\UpdateExecutor;
-use Codedge\Updater\Traits\SupportPrivateAccessToken;
-use Codedge\Updater\Traits\UseVersionFile;
+use NiNaCoder\Updater\Contracts\SourceRepositoryTypeContract;
+use NiNaCoder\Updater\Events\UpdateAvailable;
+use NiNaCoder\Updater\Models\Release;
+use NiNaCoder\Updater\Models\UpdateExecutor;
+use NiNaCoder\Updater\Traits\SupportPrivateAccessToken;
+use NiNaCoder\Updater\Traits\UseVersionFile;
 use Exception;
 use GuzzleHttp\ClientInterface;
 use Illuminate\Support\Collection;

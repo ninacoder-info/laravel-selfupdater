@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Codedge\Updater\Models;
+namespace NiNaCoder\Updater\Models;
 
-use Codedge\Updater\Traits\SupportPrivateAccessToken;
+use NiNaCoder\Updater\Traits\SupportPrivateAccessToken;
 use Exception;
 use GuzzleHttp\ClientInterface;
 use Illuminate\Filesystem\Filesystem;

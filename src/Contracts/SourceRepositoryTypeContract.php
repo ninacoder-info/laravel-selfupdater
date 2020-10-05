@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Codedge\Updater\Contracts;
+namespace NiNaCoder\Updater\Contracts;
 
-use Codedge\Updater\Models\Release;
+use NiNaCoder\Updater\Models\Release;
 
 interface SourceRepositoryTypeContract
 {

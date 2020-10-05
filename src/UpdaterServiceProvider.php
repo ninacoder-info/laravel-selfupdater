@@ -1,16 +1,16 @@
 <?php
 
-namespace Codedge\Updater;
+namespace NiNaCoder\Updater;
 
-use Codedge\Updater\Commands\CheckForUpdate;
-use Codedge\Updater\Contracts\SourceRepositoryTypeContract;
-use Codedge\Updater\Models\Release;
-use Codedge\Updater\Models\UpdateExecutor;
-use Codedge\Updater\Notifications\EventHandler;
-use Codedge\Updater\SourceRepositoryTypes\GithubRepositoryType;
-use Codedge\Updater\SourceRepositoryTypes\GithubRepositoryTypes\GithubBranchType;
-use Codedge\Updater\SourceRepositoryTypes\GithubRepositoryTypes\GithubTagType;
-use Codedge\Updater\SourceRepositoryTypes\HttpRepositoryType;
+use NiNaCoder\Updater\Commands\CheckForUpdate;
+use NiNaCoder\Updater\Contracts\SourceRepositoryTypeContract;
+use NiNaCoder\Updater\Models\Release;
+use NiNaCoder\Updater\Models\UpdateExecutor;
+use NiNaCoder\Updater\Notifications\EventHandler;
+use NiNaCoder\Updater\SourceRepositoryTypes\GithubRepositoryType;
+use NiNaCoder\Updater\SourceRepositoryTypes\GithubRepositoryTypes\GithubBranchType;
+use NiNaCoder\Updater\SourceRepositoryTypes\GithubRepositoryTypes\GithubTagType;
+use NiNaCoder\Updater\SourceRepositoryTypes\HttpRepositoryType;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
 use Illuminate\Filesystem\Filesystem;
@@ -20,7 +20,7 @@ use Illuminate\Support\ServiceProvider;
 /**
  * UpdaterServiceProvider.php.
  *
- * @author Holger Lösken <holger.loesken@codedge.de>
+ * @author Holger Lösken <holger.loesken@ninacoder-info.de>
  * @copyright See LICENSE file that was distributed with this source code.
  */
 class UpdaterServiceProvider extends ServiceProvider

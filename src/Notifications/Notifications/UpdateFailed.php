@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Codedge\Updater\Notifications\Notifications;
+namespace NiNaCoder\Updater\Notifications\Notifications;
 
-use Codedge\Updater\Events\UpdateFailed as UpdateFailedEvent;
-use Codedge\Updater\Notifications\BaseNotification;
+use NiNaCoder\Updater\Events\UpdateFailed as UpdateFailedEvent;
+use NiNaCoder\Updater\Notifications\BaseNotification;
 use Illuminate\Notifications\Messages\MailMessage;
 
 final class UpdateFailed extends BaseNotification

@@ -1,8 +1,8 @@
 <?php
 
-namespace Codedge\Updater\Commands;
+namespace NiNaCoder\Updater\Commands;
 
-use Codedge\Updater\UpdaterManager;
+use NiNaCoder\Updater\UpdaterManager;
 use Illuminate\Console\Command;
 
 class CheckForUpdate extends Command

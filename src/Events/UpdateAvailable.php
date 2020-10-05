@@ -1,6 +1,6 @@
 <?php
 
-namespace Codedge\Updater\Events;
+namespace NiNaCoder\Updater\Events;
 
 class UpdateAvailable
 {

@@ -1,5 +1,5 @@
 {
-  "name": "codedge/laravel-selfupdater",
+  "name": "ninacoder-info/laravel-selfupdater",
   "description": "Providing an auto-updating functionality for your self-hosted Laravel application.",
   "license": "MIT",
   "keywords": [
@@ -13,20 +13,26 @@
     "self-hosted laravel application"
   ],
   "support": {
-    "issues": "https://github.com/codedge/laravel-selfupdater/issues",
-    "source": "https://github.com/codedge/laravel-selfupdater"
+    "issues": "https://github.com/ninacoder-info/laravel-selfupdater/issues",
+    "source": "https://github.com/ninacoder-info/laravel-selfupdater"
   },
   "authors": [
     {
+      "name": "NiNaCoder",
+      "email": "ninacoder2510@gmail.com",
+      "homepage": "https://ninacoder.info",
+      "role": "Developer"
+    },
+    {
       "name": "Holger Lösken",
-      "email": "holger.loesken@codedge.de",
+      "email": "holger.loesken@ninacoder-info.de",
       "homepage": "http://codedge.de",
       "role": "Developer"
     }
   ],
   "autoload": {
     "psr-4": {
-      "Codedge\\Updater\\": "src/"
+      "NiNaCoder\\Updater\\": "src/"
     },
     "files": [
         "src/helpers.php"
@@ -34,7 +40,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Codedge\\Updater\\Tests\\": "tests/"
+      "NiNaCoder\\Updater\\Tests\\": "tests/"
     }
   },
   "config": {
@@ -45,10 +51,10 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Codedge\\Updater\\UpdaterServiceProvider"
+        "NiNaCoder\\Updater\\UpdaterServiceProvider"
       ],
       "aliases": {
-        "Updater": "Codedge\\Updater\\UpdaterFacade"
+        "Updater": "NiNaCoder\\Updater\\UpdaterFacade"
       }
     }
   },

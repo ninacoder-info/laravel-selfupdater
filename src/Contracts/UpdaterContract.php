@@ -1,6 +1,6 @@
 <?php
 
-namespace Codedge\Updater\Contracts;
+namespace NiNaCoder\Updater\Contracts;
 
 interface UpdaterContract
 {

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Codedge\Updater\Notifications\Notifications;
+namespace NiNaCoder\Updater\Notifications\Notifications;
 
-use Codedge\Updater\Events\UpdateAvailable as UpdateAvailableEvent;
-use Codedge\Updater\Notifications\BaseNotification;
+use NiNaCoder\Updater\Events\UpdateAvailable as UpdateAvailableEvent;
+use NiNaCoder\Updater\Notifications\BaseNotification;
 use Illuminate\Notifications\Messages\MailMessage;
 
 final class UpdateAvailable extends BaseNotification

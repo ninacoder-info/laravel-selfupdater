@@ -1,18 +1,18 @@
 <?php
 
-namespace Codedge\Updater;
+namespace NiNaCoder\Updater;
 
-use Codedge\Updater\Contracts\SourceRepositoryTypeContract;
-use Codedge\Updater\Models\Release;
-use Codedge\Updater\Models\UpdateExecutor;
-use Codedge\Updater\Traits\SupportPrivateAccessToken;
-use Codedge\Updater\Traits\UseVersionFile;
+use NiNaCoder\Updater\Contracts\SourceRepositoryTypeContract;
+use NiNaCoder\Updater\Models\Release;
+use NiNaCoder\Updater\Models\UpdateExecutor;
+use NiNaCoder\Updater\Traits\SupportPrivateAccessToken;
+use NiNaCoder\Updater\Traits\UseVersionFile;
 use Illuminate\Support\Facades\Artisan;
 
 /**
  * SourceRepository.
  *
- * @author Holger Lösken <holger.loesken@codedge.de>
+ * @author Holger Lösken <holger.loesken@ninacoder-info.de>
  * @copyright See LICENSE file that was distributed with this source code.
  */
 final class SourceRepository implements SourceRepositoryTypeContract

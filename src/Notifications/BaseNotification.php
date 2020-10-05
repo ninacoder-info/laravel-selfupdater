@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Codedge\Updater\Notifications;
+namespace NiNaCoder\Updater\Notifications;
 
 use Illuminate\Notifications\Notification;
 

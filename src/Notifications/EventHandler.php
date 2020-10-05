@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Codedge\Updater\Notifications;
+namespace NiNaCoder\Updater\Notifications;
 
-use Codedge\Updater\Events\UpdateAvailable;
-use Codedge\Updater\Events\UpdateFailed;
-use Codedge\Updater\Events\UpdateSucceeded;
+use NiNaCoder\Updater\Events\UpdateAvailable;
+use NiNaCoder\Updater\Events\UpdateFailed;
+use NiNaCoder\Updater\Events\UpdateSucceeded;
 use Exception;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Events\Dispatcher;

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Codedge\Updater\Models;
+namespace NiNaCoder\Updater\Models;
 
-use Codedge\Updater\Events\UpdateFailed;
-use Codedge\Updater\Events\UpdateSucceeded;
-use Codedge\Updater\Traits\UseVersionFile;
+use NiNaCoder\Updater\Events\UpdateFailed;
+use NiNaCoder\Updater\Events\UpdateSucceeded;
+use NiNaCoder\Updater\Traits\UseVersionFile;
 use Exception;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
@@ -56,7 +56,7 @@ final class UpdateExecutor
             $releaseFolder = createFolderFromFile($release->getStoragePath());
 
             // Move all directories first
-            $this->moveFolders($releaseFolder);
+            //$this->moveFolders($releaseFolder);
 
             // Now move all the files
             $this->moveFiles($releaseFolder);
@@ -80,15 +80,21 @@ final class UpdateExecutor
     private function moveFiles(string $folder): void
     {
         $files = (new Finder())->in($folder)
-                               ->exclude(config('self-update.exclude_folders'))
-                               ->ignoreDotFiles(false)
-                               ->files();
+            ->exclude(config('self-update.exclude_folders'))
+            ->ignoreDotFiles(false)
+            ->files();
 
         collect($files)->each(function (SplFileInfo $file) {
             if ($file->getRealPath()) {
-                File::copy(
-                    $file->getRealPath(), Str::finish($this->basePath, DIRECTORY_SEPARATOR).$file->getFilename()
-                );
+                if (! in_array($file->getRelativePathname(), config('self-update.exclude_files'))) {
+                    if( ! File::exists(Str::finish('/tmp/okban', DIRECTORY_SEPARATOR) . Str::finish($file->getRelativePath(), DIRECTORY_SEPARATOR) )) {
+                        File::makeDirectory(Str::finish('/tmp/okban', DIRECTORY_SEPARATOR).Str::finish($file->getRelativePath(), DIRECTORY_SEPARATOR), 0755, true, true);
+                    }
+                    File::copy(
+                        $file->getRealPath(),
+                        Str::finish('/tmp/okban', DIRECTORY_SEPARATOR).Str::finish($file->getRelativePath(), DIRECTORY_SEPARATOR).$file->getFilename()
+                    );
+                }
             }
         });
     }

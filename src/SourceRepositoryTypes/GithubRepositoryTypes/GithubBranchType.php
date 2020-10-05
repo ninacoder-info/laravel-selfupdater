@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Codedge\Updater\SourceRepositoryTypes\GithubRepositoryTypes;
+namespace NiNaCoder\Updater\SourceRepositoryTypes\GithubRepositoryTypes;
 
-use Codedge\Updater\Contracts\SourceRepositoryTypeContract;
-use Codedge\Updater\Models\Release;
-use Codedge\Updater\Models\UpdateExecutor;
-use Codedge\Updater\SourceRepositoryTypes\GithubRepositoryType;
+use NiNaCoder\Updater\Contracts\SourceRepositoryTypeContract;
+use NiNaCoder\Updater\Models\Release;
+use NiNaCoder\Updater\Models\UpdateExecutor;
+use NiNaCoder\Updater\SourceRepositoryTypes\GithubRepositoryType;
 use GuzzleHttp\ClientInterface;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Log;
