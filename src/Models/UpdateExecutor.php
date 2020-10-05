@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace NiNaCoder\Updater\Models;
+namespace Codedge\Updater\Models;
 
-use NiNaCoder\Updater\Events\UpdateFailed;
-use NiNaCoder\Updater\Events\UpdateSucceeded;
-use NiNaCoder\Updater\Traits\UseVersionFile;
+use Codedge\Updater\Events\UpdateFailed;
+use Codedge\Updater\Events\UpdateSucceeded;
+use Codedge\Updater\Traits\UseVersionFile;
 use Exception;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
@@ -54,7 +54,6 @@ final class UpdateExecutor
     {
         if (checkPermissions((new Finder())->in($this->basePath))) {
             $releaseFolder = createFolderFromFile($release->getStoragePath());
-
             // Move all directories first
             //$this->moveFolders($releaseFolder);
 
@@ -63,7 +62,6 @@ final class UpdateExecutor
 
             // Delete the folder from the update
             File::deleteDirectory($releaseFolder);
-
             // Delete the version file
             $this->deleteVersionFile();
 
@@ -74,7 +72,9 @@ final class UpdateExecutor
 
         event(new UpdateFailed($release));
 
-        return false;
+        echo ('The project is not writeable');
+
+        die();
     }
 
     private function moveFiles(string $folder): void

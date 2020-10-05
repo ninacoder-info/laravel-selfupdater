@@ -41,10 +41,9 @@ return [
             'type' => 'github',
             'repository_vendor' => env('SELF_UPDATER_REPO_VENDOR', ''),
             'repository_name' => env('SELF_UPDATER_REPO_NAME', ''),
-            'repository_url' => '',
-            'download_path' => env('SELF_UPDATER_DOWNLOAD_PATH', '/tmp'),
+            'repository_url' =>  env('SELF_UPDATER_REPO_URL', ''),
+            'download_path' => storage_path(),
             'private_access_token' => env('SELF_UPDATER_GITHUB_PRIVATE_ACCESS_TOKEN', ''),
-            'use_branch' => env('SELF_UPDATER_USE_BRANCH', ''),
         ],
         'http' => [
             'type' => 'http',
@@ -60,23 +59,27 @@ return [
     | Exclude folders from update
     |--------------------------------------------------------------------------
     |
-    | Specific folders which should not be updated and will be skipped during the
-    | update process.
-    |
-    | Here's already a list of good examples to skip. You may want to keep those.
+    */
+
+    'exclude_files' => [
+        'public/favicon.ico'
+    ],
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Exclude folders from update
+    |--------------------------------------------------------------------------
     |
     */
 
     'exclude_folders' => [
-        '__MACOSX',
-        'node_modules',
         'bootstrap/cache',
-        'bower',
-        'storage/app',
-        'storage/framework',
-        'storage/logs',
-        'storage/self-update',
-        'vendor',
+        'config',
+        'public/common',
+        'public/skins/default/images',
+        'public/svg',
+        'storage',
     ],
 
     /*
@@ -101,16 +104,16 @@ return [
 
     'notifications' => [
         'notifications' => [
-            \NiNaCoder\Updater\Notifications\Notifications\UpdateSucceeded::class => ['mail'],
-            \NiNaCoder\Updater\Notifications\Notifications\UpdateFailed::class => ['mail'],
-            \NiNaCoder\Updater\Notifications\Notifications\UpdateAvailable::class => ['mail'],
+            \Codedge\Updater\Notifications\Notifications\UpdateSucceeded::class => ['mail'],
+            \Codedge\Updater\Notifications\Notifications\UpdateFailed::class => ['mail'],
+            \Codedge\Updater\Notifications\Notifications\UpdateAvailable::class => ['mail'],
         ],
 
         /*
          * Here you can specify the notifiable to which the notifications should be sent. The default
          * notifiable will use the variables specified in this config file.
          */
-        'notifiable' => \NiNaCoder\Updater\Notifications\Notifiable::class,
+        'notifiable' => \Codedge\Updater\Notifications\Notifiable::class,
 
         'mail' => [
             'to' => [
