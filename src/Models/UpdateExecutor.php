@@ -87,12 +87,12 @@ final class UpdateExecutor
         collect($files)->each(function (SplFileInfo $file) {
             if ($file->getRealPath()) {
                 if (! in_array($file->getRelativePathname(), config('self-update.exclude_files'))) {
-                    if( ! File::exists(Str::finish('/tmp/okban', DIRECTORY_SEPARATOR) . Str::finish($file->getRelativePath(), DIRECTORY_SEPARATOR) )) {
-                        File::makeDirectory(Str::finish('/tmp/okban', DIRECTORY_SEPARATOR).Str::finish($file->getRelativePath(), DIRECTORY_SEPARATOR), 0755, true, true);
+                    if( ! File::exists(Str::finish($this->basePath, DIRECTORY_SEPARATOR) . Str::finish($file->getRelativePath(), DIRECTORY_SEPARATOR) )) {
+                        File::makeDirectory(Str::finish($this->basePath, DIRECTORY_SEPARATOR).Str::finish($file->getRelativePath(), DIRECTORY_SEPARATOR), 0755, true, true);
                     }
                     File::copy(
                         $file->getRealPath(),
-                        Str::finish('/tmp/okban', DIRECTORY_SEPARATOR).Str::finish($file->getRelativePath(), DIRECTORY_SEPARATOR).$file->getFilename()
+                        Str::finish($this->basePath, DIRECTORY_SEPARATOR).Str::finish($file->getRelativePath(), DIRECTORY_SEPARATOR).$file->getFilename()
                     );
                 }
             }
