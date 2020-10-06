@@ -52,7 +52,13 @@ final class UpdateExecutor
      */
     public function run(Release $release): bool
     {
-        if (checkPermissions((new Finder())->in($this->basePath))) {
+        $finder = new Finder();
+        $finder->files()
+            ->in($this->basePath)
+            ->exclude(config('self-update.exclude_folders'))
+            ->ignoreDotFiles(false);
+
+        if (checkPermissions($finder)) {
             $releaseFolder = createFolderFromFile($release->getStoragePath());
             // Move all directories first
             //$this->moveFolders($releaseFolder);
@@ -79,12 +85,14 @@ final class UpdateExecutor
 
     private function moveFiles(string $folder): void
     {
-        $files = (new Finder())->in($folder)
-            ->exclude(config('self-update.exclude_folders'))
-            ->ignoreDotFiles(false)
-            ->files();
 
-        collect($files)->each(function (SplFileInfo $file) {
+        $finder = new Finder();
+        $finder->files()
+            ->in($folder)
+            ->exclude(config('self-update.exclude_folders'))
+            ->ignoreDotFiles(false);
+        foreach ($finder as $file) {
+
             if ($file->getRealPath()) {
                 if (! in_array($file->getRelativePathname(), config('self-update.exclude_files'))) {
                     if( ! File::exists(Str::finish($this->basePath, DIRECTORY_SEPARATOR) . Str::finish($file->getRelativePath(), DIRECTORY_SEPARATOR) )) {
@@ -96,7 +104,7 @@ final class UpdateExecutor
                     );
                 }
             }
-        });
+        }
     }
 
     private function moveFolders(string $folder): void

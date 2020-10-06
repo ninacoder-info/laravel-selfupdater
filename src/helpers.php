@@ -28,16 +28,14 @@ if (! \function_exists('checkPermissions')) {
      *
      * @return bool
      */
-    function checkPermissions(Finder $directory): bool
+    function checkPermissions($directory): bool
     {
         $checkPermission = true;
-
-        collect($directory->getIterator())->each(function (SplFileInfo $file) use (&$checkPermission) {
+        foreach ($directory as $file) {
             if ($file->isWritable() === false) {
-                $checkPermission = false;
+                die($file->getRealPath() . ' is not writable');
             }
-        });
-
+        }
         return $checkPermission;
     }
 }

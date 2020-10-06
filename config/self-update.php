@@ -22,7 +22,7 @@ return [
     |
     */
 
-    'version_installed' => env('SELF_UPDATER_VERSION_INSTALLED', ''),
+    'version_installed' => env('APP_VERSION', '1.0.0'),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,13 +56,14 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Exclude folders from update
+    | Exclude files from update
     |--------------------------------------------------------------------------
     |
     */
 
     'exclude_files' => [
-        'public/favicon.ico'
+        'public/favicon.ico',
+        'public/robots.txt'
     ],
 
 
@@ -104,26 +105,26 @@ return [
 
     'notifications' => [
         'notifications' => [
-            \NinaCoder\Updater\Notifications\Notifications\UpdateSucceeded::class => ['mail'],
-            \NinaCoder\Updater\Notifications\Notifications\UpdateFailed::class => ['mail'],
-            \NinaCoder\Updater\Notifications\Notifications\UpdateAvailable::class => ['mail'],
+            \NiNaCoder\Updater\Notifications\Notifications\UpdateSucceeded::class => ['mail'],
+            \NiNaCoder\Updater\Notifications\Notifications\UpdateFailed::class => ['mail'],
+            \NiNaCoder\Updater\Notifications\Notifications\UpdateAvailable::class => ['mail'],
         ],
 
         /*
          * Here you can specify the notifiable to which the notifications should be sent. The default
          * notifiable will use the variables specified in this config file.
          */
-        'notifiable' => \Codedge\Updater\Notifications\Notifiable::class,
+        'notifiable' => \NiNaCoder\Updater\Notifications\Notifiable::class,
 
         'mail' => [
             'to' => [
-                'address' => env('SELF_UPDATER_MAILTO_ADDRESS', 'notifications@example.com'),
-                'name' => env('SELF_UPDATER_MAILTO_NAME', ''),
+                'address' => env('APP_ADMIN_EMAIL'),
+                'name' => env('APP_NAME', ''),
             ],
 
             'from' => [
-                'address' => env('SELF_UPDATER_MAIL_FROM_ADDRESS', 'updater@example.com'),
-                'name' => env('SELF_UPDATER_MAIL_FROM_NAME', 'Update'),
+                'address' => 'noreply@ninacoder.info',
+                'name' => 'MusicEngine Update',
             ],
         ],
     ],
