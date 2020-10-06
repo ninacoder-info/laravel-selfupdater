@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Codedge\Updater\Models;
+namespace NiNaCoder\Updater\Models;
 
-use Codedge\Updater\Events\UpdateFailed;
-use Codedge\Updater\Events\UpdateSucceeded;
-use Codedge\Updater\Traits\UseVersionFile;
+use NiNaCoder\Updater\Events\UpdateFailed;
+use NiNaCoder\Updater\Events\UpdateSucceeded;
+use NiNaCoder\Updater\Traits\UseVersionFile;
 use Exception;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
